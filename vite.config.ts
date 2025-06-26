@@ -8,9 +8,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.join("src", "index.ts"),
-      name: "Pl",
+      name: "monoalias",
       formats: ["es"],
-      fileName: "pl",
+      fileName: "monoalias",
     },
   },
   plugins: [dts(), Inspect()],
