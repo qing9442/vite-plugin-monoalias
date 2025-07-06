@@ -1,0 +1,45 @@
+{
+  "name": "vite-plugin-monoalias",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "resolve path alias in monorepo project",
+  "author": "qing9442<qing9442@outlook.com>",
+  "license": "MIT",
+  "keywords": [
+    "alias",
+    "monorepo"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/monoalias.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:1": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.7",
+    "globby": "^14.1.0",
+    "typescript": "~5.8.3",
+    "unplugin-dts": "1.0.0-beta.2",
+    "vite": "^7.0.0",
+    "vite-plugin-inspect": "^11.2.0",
+    "vitest": "^3.2.4"
+  },
+  "volta": {
+    "node": "24.1.0"
+  }
+}

@@ -1,24 +1,58 @@
 # vite-plugin-monoalias
 
-#### 介绍
+[中文](README.zh.md)
 
-`monorepo`子项目中使用`@`指向自己项目下`src`路径时，会导致一个问题：在其他子项目中引用该子项目文件时，由于解析问题，最终指向的文件路径不对的问题。因为他始终指向的是，打包项目的`src`目录。
+#### Introduction
 
-#### 安装教程
+Resolves path alias resolution issues in monorepo projects. When a subproject uses `@` to point to its own `src` directory, referencing files from this subproject in other subprojects will cause path resolution errors, as it always points to the `src` directory of the built project rather than the original project's `src` directory.
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### Installation
 
-#### 使用说明
+```bash
+# Using pnpm
+pnpm add vite-plugin-monoalias -D
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+# Using npm
+npm install vite-plugin-monoalias --save-dev
 
-#### 参与贡献
+# Using yarn
+yarn add vite-plugin-monoalias -D
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+#### Basic Usage
+
+Add the plugin in your vite configuration file:
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import Monoalias from 'vite-plugin-monoalias'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    Monoalias(), // Add the plugin
+  ],
+})
+```
+
+#### Advanced Configuration
+
+```ts
+Monoalias({
+  /**
+   * Manually specify the monorepo project root directory
+   * Default: auto-detected
+   */
+  root: fileURLToPath(new URL("../../", import.meta.url)),
+  
+  /**
+   * Alias configuration to be replaced
+   * Default: {"@": "./src"}
+   */
+  alias: {
+    "@": "./src"
+  },
+})
+```

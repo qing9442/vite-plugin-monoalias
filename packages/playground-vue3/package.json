@@ -1,0 +1,26 @@
+{
+	"name": "playground-vue3",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"playground-comp": "workspace:*",
+		"vite-plugin-monoalias": "workspace:*",
+		"vue": "^3.5.17"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^6.0.0",
+		"@vue/tsconfig": "^0.7.0",
+		"@winter-love/vite-plugin-monorepo-alias": "^1.0.37",
+		"typescript": "~5.8.3",
+		"vite": "^7.0.0",
+		"vite-plugin-inspect": "^11.2.0",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vue-tsc": "^2.2.10"
+	}
+}

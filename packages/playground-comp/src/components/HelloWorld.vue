@@ -2,6 +2,7 @@
 import {ref} from "vue";
 // import { plus } from "../utils/plus.js";
 import {plus} from "@/utils/plus.js";
+import logo from "@/components/logo.vue";
 
 defineProps({
   msg: String,
@@ -15,12 +16,13 @@ function add() {
 </script>
 
 <template>
+  <logo>3333</logo>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="add">countd is {{ count }}</button>
+    <button type="button" @click="add">count is {{ count }}</button>
     <p>
-      Editeeee
+      Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
