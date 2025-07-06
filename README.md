@@ -1,6 +1,6 @@
 # vite-plugin-monoalias
 
-[中文](README.zh.md)
+[中文](https://github.com/qing9442/vite-plugin-monoalias/blob/master/README.zh.md)
 
 #### Introduction
 

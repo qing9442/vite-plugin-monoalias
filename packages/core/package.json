@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-monoalias",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "description": "resolve path alias in monorepo project",
